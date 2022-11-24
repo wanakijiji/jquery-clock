@@ -31,20 +31,22 @@ $(function(){
 
 			// 各値の取得
 			now = {
-				'full': now,
-				'year': now.getFullYear(),
-				'month': MONTH.short[now.getMonth()],
-				'month-full': MONTH.full[now.getMonth()],
-				'month-num': now.getMonth() + 1,
-				'month-num-full': ( now.getMonth() + 1 < 10 ) ? '0' + ( now.getMonth() + 1 ) : now.getMonth() + 1,
-				'date': now.getDate(),
-				'date-full': ( now.getDate() < 10 ) ? '0' + now.getDate() : now.getDate(),
-				'day': DAY.short[now.getDay()],
-				'day-full': DAY.full[now.getDay()],
-				'day-ja': DAY.ja[now.getDay()],
-				'hour': ( now.getHours() < 10 ) ? '0' + now.getHours() : now.getHours(),
-				'minute': ( now.getMinutes() < 10 ) ? '0' + now.getMinutes() : now.getMinutes(),
-				'second': ( now.getSeconds() < 10 ) ? '0' + now.getSeconds() : now.getSeconds()
+				'cl-full': now,
+				'cl-year': now.getFullYear(),
+				'cl-month': MONTH.short[now.getMonth()],
+				'cl-month-full': MONTH.full[now.getMonth()],
+				'cl-month-num': now.getMonth() + 1,
+				'cl-month-num-full': (now.getMonth() + 1).toString().padStart(2, '0'),
+				'cl-date': now.getDate(),
+				'cl-date-full': now.getDate().toString().padStart(2, '0'),
+				'cl-day': DAY.short[now.getDay()],
+				'cl-day-full': DAY.full[now.getDay()],
+				'cl-day-ja': DAY.ja[now.getDay()],
+				'cl-hour': now.getHours().toString().padStart(2, '0'),
+				'cl-hour-12': (now.getHours() % 12).toString().padStart(2, '0'),
+				'cl-ampm': (now.getHours() < 12) ? 'am' : 'pm',
+				'cl-minute': now.getMinutes().toString().padStart(2, '0'),
+				'cl-second': now.getSeconds().toString().padStart(2, '0'),
 			};
 	
 			// 出力
